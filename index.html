@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
@@ -49,6 +49,7 @@
         <li><a class="nav__link" href="#realisations">Réalisations</a></li>
         <li><a class="nav__link" href="#apropos">À propos</a></li>
         <li><a class="nav__link" href="#contact">Contact</a></li>
+        <li><a class="nav__link" href="#rendez-vous">Rendez-vous</a></li>
       </ul>
       <a class="btn btn--accent btn--sm nav__cta" href="tel:0620259420">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.25 1l-2.23 2.2Z" fill="currentColor"/></svg>
@@ -67,11 +68,7 @@
 
 <!-- ============================== HERO ============================== -->
 <section class="hero" id="accueil">
-  <div class="hero__bg" aria-hidden="true">
-    <div class="hero__grid"></div>
-    <div class="hero__glow hero__glow--a"></div>
-    <div class="hero__glow hero__glow--b"></div>
-  </div>
+  <div class="hero__bg" aria-hidden="true"></div>
 
   <div class="container hero__inner">
     <div class="hero__content">
@@ -122,83 +119,31 @@
       </ul>
     </div>
 
-    <!-- Illustration décorative : maison + mur en pierre, 100% SVG inline -->
-    <div class="hero__visual reveal" aria-hidden="true">
+    <!-- Visuel du hero : photo réelle du dépôt de l'entreprise (Épinay-sur-Odon).
+         Pour la remplacer : déposer la nouvelle image dans img/ et ajuster
+         `object-position` sur `.visual-photo` dans css/style.css (voir README). -->
+    <figure class="hero__visual reveal">
       <div class="visual-card">
-        <svg class="house" viewBox="0 0 400 360" role="presentation">
-          <defs>
-            <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#1c2229"/>
-              <stop offset="1" stop-color="#12161b"/>
-            </linearGradient>
-            <linearGradient id="roofG" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#d1683a"/>
-              <stop offset="1" stop-color="#9d4526"/>
-            </linearGradient>
-            <linearGradient id="wallG" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#e8e2d9"/>
-              <stop offset="1" stop-color="#c3bbaf"/>
-            </linearGradient>
-            <pattern id="brick" width="40" height="20" patternUnits="userSpaceOnUse">
-              <rect width="40" height="20" fill="none"/>
-              <path d="M0 20h40M0 10h40M20 0v10M0 10v10M40 10v10" stroke="#8f857a" stroke-width="1" opacity=".55"/>
-            </pattern>
-          </defs>
-
-          <rect width="400" height="360" rx="20" fill="url(#skyG)"/>
-
-          <!-- lignes d'architecte -->
-          <g stroke="#ffffff" stroke-width=".5" opacity=".08">
-            <path d="M0 60h400M0 120h400M0 180h400M0 240h400M0 300h400"/>
-            <path d="M60 0v360M120 0v360M180 0v360M240 0v360M300 0v360M360 0v360"/>
-          </g>
-
-          <!-- sol -->
-          <path d="M0 300h400v60H0z" fill="#0e1216"/>
-          <path d="M0 300h400" stroke="#d1683a" stroke-width="2" opacity=".5"/>
-
-          <!-- maison -->
-          <g class="house__body">
-            <path d="M110 300V170l90-62 90 62v130z" fill="url(#wallG)"/>
-            <path d="M110 300V170l90-62 90 62v130z" fill="url(#brick)"/>
-            <path d="M92 176 200 100l108 76" fill="none" stroke="url(#roofG)" stroke-width="18" stroke-linejoin="round" stroke-linecap="round"/>
-            <!-- porte -->
-            <rect x="180" y="238" width="40" height="62" rx="4" fill="#2a3138"/>
-            <circle cx="212" cy="270" r="2.5" fill="#d1683a"/>
-            <!-- fenêtres -->
-            <rect x="130" y="200" width="38" height="34" rx="3" fill="#2a3138"/>
-            <rect x="232" y="200" width="38" height="34" rx="3" fill="#2a3138"/>
-            <path d="M149 200v34M130 217h38M251 200v34M232 217h38" stroke="#e8e2d9" stroke-width="1.5" opacity=".35"/>
-            <!-- cheminée -->
-            <path d="M252 132v-24h20v38" fill="#b8ada0"/>
-          </g>
-
-          <!-- mur en pierre à gauche -->
-          <g class="house__wall">
-            <rect x="20" y="236" width="72" height="64" rx="4" fill="#cdc5b8"/>
-            <g stroke="#8f857a" stroke-width="1.2" opacity=".7" fill="none">
-              <path d="M20 258h72M20 280h72M46 236v22M70 258v22M38 280v20M64 280v20"/>
-            </g>
-          </g>
-
-          <!-- échafaudage / niveau -->
-          <g class="house__scaffold" stroke="#d1683a" stroke-width="2.5" fill="none" opacity=".85">
-            <path d="M320 300V150h44v150M320 190h44M320 240h44"/>
-          </g>
-
-          <!-- cotes d'architecte -->
-          <g stroke="#7c8896" stroke-width="1" fill="none">
-            <path d="M110 326h180M110 320v12M290 320v12"/>
-          </g>
-          <text x="200" y="345" text-anchor="middle" fill="#7c8896" font-family="Inter, sans-serif" font-size="11" letter-spacing="1">GROS ŒUVRE</text>
-        </svg>
+        <div class="visual-card__frame">
+          <img class="visual-photo"
+               src="img/entreprise-facade.jpg"
+               alt="Le dépôt de David Bâtiment à Épinay-sur-Odon : bâtiment gris avec l'enseigne « David Bâtiment — Maçonnerie Rénovation » et trois portes sectionnelles ouvrant sur la cour."
+               width="550" height="413"
+               decoding="async" fetchpriority="high">
+          <figcaption class="visual-caption">
+            <span class="visual-caption__pin" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </span>
+            <span><strong>Notre dépôt et nos ateliers</strong><br>8 Lieu Dit Les Gouix, Épinay-sur-Odon (14)</span>
+          </figcaption>
+        </div>
 
         <div class="visual-badge">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 9.3 8 10 4.6-.7 8-5 8-10V6l-8-4Z" fill="currentColor" opacity=".18"/><path d="M12 2 4 6v6c0 5 3.4 9.3 8 10 4.6-.7 8-5 8-10V6l-8-4Z" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
           <span><strong>Qualité d'Artisan</strong><br>du Bâtiment</span>
         </div>
       </div>
-    </div>
+    </figure>
   </div>
 
   <!-- bandeau défilant -->
@@ -746,7 +691,15 @@
             <span class="contact__ic" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.25 1l-2.23 2.2Z" fill="currentColor"/></svg>
             </span>
-            <span class="contact__meta"><small>Téléphone</small><strong>06 20 25 94 20</strong></span>
+            <span class="contact__meta"><small>Téléphone mobile</small><strong>06 20 25 94 20</strong></span>
+          </a>
+        </li>
+        <li>
+          <a href="tel:0231809338">
+            <span class="contact__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v3"/><rect x="2" y="9" width="20" height="8" rx="2"/><path d="M7 17v3h10v-3"/><path d="M6 12.5h2"/></svg>
+            </span>
+            <span class="contact__meta"><small>Téléphone fixe</small><strong>02 31 80 93 38</strong></span>
           </a>
         </li>
         <li>
@@ -755,14 +708,6 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg>
             </span>
             <span class="contact__meta"><small>E-mail</small><strong>david.batiment@orange.fr</strong></span>
-          </a>
-        </li>
-        <li>
-          <a href="https://wa.me/33231809338" target="_blank" rel="noopener">
-            <span class="contact__ic" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5 4.9 16A8 8 0 1 1 8 19.1l-4.5 1.4Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5"/></svg>
-            </span>
-            <span class="contact__meta"><small>WhatsApp</small><strong>02 31 80 93 38</strong></span>
           </a>
         </li>
         <li>
@@ -837,11 +782,165 @@
         <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
         <p class="form__legal">
           Démonstration : ce formulaire n'envoie pas encore de message.
-          Pour une réponse immédiate, appelez le <a href="tel:0620259420">06 20 25 94 20</a>.
+          Pour une réponse immédiate, appelez le <a href="tel:0620259420">06 20 25 94 20</a>
+          ou le <a href="tel:0231809338">02 31 80 93 38</a>.
         </p>
       </form>
     </div>
 
+  </div>
+</section>
+
+<!-- ============================== PRISE DE RENDEZ-VOUS ============================== -->
+<!--
+  EMPLACEMENT RÉSERVÉ AU WIDGET DE PRISE DE RENDEZ-VOUS
+  Aucun service n'est encore connecté : le bloc `.booking__mock` ci-dessous est
+  un APERÇU VISUEL statique (aucun JavaScript, aucun créneau réel, rien de
+  cliquable) qui montre au client le rendu attendu une fois le compte créé.
+  Voir le README, section « Brancher un vrai widget de rendez-vous ».
+-->
+<section class="section section--stone booking" id="rendez-vous">
+  <div class="container">
+
+    <header class="section__head reveal">
+      <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>Prendre rendez-vous</p>
+      <h2 class="section__title">Réservez un créneau<br>pour un devis gratuit</h2>
+      <p class="section__lead">
+        Choisissez le moment qui vous arrange : nous passons sur place mesurer,
+        écouter votre projet et vous remettre une estimation détaillée, sans
+        engagement. Comptez environ 30 minutes de visite.
+      </p>
+    </header>
+
+    <div class="booking__grid">
+
+      <!-- =========================================================
+           ► EMPLACEMENT DU WIDGET CALENDLY / CAL.COM ◄
+           Une fois le compte créé, SUPPRIMER tout le bloc
+           <div class="booking__mock"> … </div> ci-dessous et coller à la place
+           le code d'intégration fourni par le service, par exemple :
+
+           Calendly (inline) :
+             <div class="calendly-inline-widget"
+                  data-url="https://calendly.com/david-batiment/devis-gratuit"
+                  style="min-width:320px;height:700px"></div>
+             <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+           Cal.com (inline) :
+             <div id="my-cal-inline" style="min-height:700px"></div>
+             <script>…snippet fourni par Cal.com…</script>
+
+           Le conteneur `.booking__widget` fournit déjà la carte, le fond et les
+           marges : le widget n'a qu'à s'insérer dedans.
+           ========================================================= -->
+      <div class="booking__widget reveal">
+        <p class="booking__flag">
+          <span class="booking__flag-dot" aria-hidden="true"></span>
+          Aperçu — widget Calendly / Cal.com à connecter
+        </p>
+
+        <!-- Maquette statique, purement illustrative (aucun créneau réel) -->
+        <div class="booking__mock" aria-hidden="true">
+          <div class="booking__mock-head">
+            <span class="booking__mock-avatar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="16" rx="3"/>
+                <path d="M3 10h18M8 3v4M16 3v4"/>
+                <path d="m9.5 15 1.8 1.8 3.4-3.6"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Visite technique &amp; devis gratuit</strong>
+              <span>30 min · sur place ou par téléphone · David Bâtiment</span>
+            </div>
+          </div>
+
+          <div class="booking__month">
+            <span class="booking__arrow">‹</span>
+            <span class="booking__month-label">Septembre 2026</span>
+            <span class="booking__arrow">›</span>
+          </div>
+
+          <ul class="booking__days">
+            <li class="booking__day is-off"><small>Lun</small><b>7</b></li>
+            <li class="booking__day"><small>Mar</small><b>8</b></li>
+            <li class="booking__day is-selected"><small>Mer</small><b>9</b></li>
+            <li class="booking__day"><small>Jeu</small><b>10</b></li>
+            <li class="booking__day"><small>Ven</small><b>11</b></li>
+            <li class="booking__day is-off"><small>Sam</small><b>12</b></li>
+          </ul>
+
+          <p class="booking__slots-title">Créneaux du mercredi 9 septembre</p>
+          <ul class="booking__slots">
+            <li class="booking__slot">08:00</li>
+            <li class="booking__slot">09:00</li>
+            <li class="booking__slot is-selected">10:30</li>
+            <li class="booking__slot">14:00</li>
+            <li class="booking__slot">15:30</li>
+            <li class="booking__slot is-off">17:00</li>
+          </ul>
+
+          <div class="booking__confirm">
+            <span class="booking__confirm-btn">Confirmer le rendez-vous</span>
+            <span class="booking__confirm-note">Fuseau horaire&nbsp;: Europe/Paris (UTC+2)</span>
+          </div>
+        </div>
+
+        <p class="booking__note">
+          <strong>Cet agenda est une simulation visuelle</strong> : les jours et
+          les horaires affichés sont des exemples, aucune réservation n'est
+          enregistrée. Le véritable calendrier — avec les disponibilités réelles
+          et la confirmation par e-mail — s'affichera exactement à cet endroit
+          dès que le compte Calendly ou Cal.com sera créé.
+        </p>
+      </div>
+
+      <aside class="booking__aside reveal">
+        <h3 class="booking__aside-title">Comment ça se passe</h3>
+        <ol class="booking__steps">
+          <li>
+            <span class="booking__step-num" aria-hidden="true">1</span>
+            <div>
+              <strong>Vous choisissez un créneau</strong>
+              <p>Un jour et une heure qui vous conviennent, en quelques secondes.</p>
+            </div>
+          </li>
+          <li>
+            <span class="booking__step-num" aria-hidden="true">2</span>
+            <div>
+              <strong>Nous venons sur place</strong>
+              <p>Prise de mesures, état des lieux et conseils techniques sur votre projet.</p>
+            </div>
+          </li>
+          <li>
+            <span class="booking__step-num" aria-hidden="true">3</span>
+            <div>
+              <strong>Vous recevez le devis</strong>
+              <p>Une estimation claire et détaillée, gratuite et sans engagement.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="booking__fallback">
+          <p class="booking__fallback-title">En attendant, prenez rendez-vous par téléphone</p>
+          <div class="booking__fallback-actions">
+            <a class="btn btn--accent" href="tel:0620259420">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.25 1l-2.23 2.2Z" fill="currentColor"/></svg>
+              06 20 25 94 20
+            </a>
+            <a class="btn btn--outline-dark" href="tel:0231809338">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v3"/><rect x="2" y="9" width="20" height="8" rx="2"/><path d="M7 17v3h10v-3"/><path d="M6 12.5h2"/></svg>
+              02 31 80 93 38
+            </a>
+          </div>
+          <p class="booking__fallback-note">
+            Ou remplissez le <a href="#contact">formulaire de demande de devis</a> :
+            nous vous rappelons pour convenir d'une date.
+          </p>
+        </div>
+      </aside>
+
+    </div>
   </div>
 </section>
 
@@ -898,6 +997,7 @@
         <li><a href="#apropos">À propos</a></li>
         <li><a href="#zone">Zone d'intervention</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#rendez-vous">Prendre rendez-vous</a></li>
       </ul>
     </nav>
 
@@ -916,8 +1016,8 @@
     <div class="footer__nav footer__contact">
       <h3>Contact</h3>
       <ul>
-        <li><a href="tel:0620259420">06 20 25 94 20</a></li>
-        <li><a href="https://wa.me/33231809338" target="_blank" rel="noopener">WhatsApp&nbsp;: 02 31 80 93 38</a></li>
+        <li><a href="tel:0620259420">Mobile&nbsp;: 06 20 25 94 20</a></li>
+        <li><a href="tel:0231809338">Fixe&nbsp;: 02 31 80 93 38</a></li>
         <li><a href="mailto:david.batiment@orange.fr">david.batiment@orange.fr</a></li>
         <li>8 Lieu Dit Les Gouix<br>14310 Épinay-sur-Odon</li>
       </ul>
