@@ -1,0 +1,45 @@
+# ---- Système ----
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ---- Éditeurs / IDE ----
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+*.swp
+*.swo
+*~
+
+# ---- Node (si un jour un outil optionnel est ajouté) ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+package-lock.json.bak
+
+# ---- Serveurs locaux / builds ----
+.cache/
+dist/
+build/
+.tmp/
+.parcel-cache/
+
+# ---- Environnement ----
+.env
+.env.*
+!.env.example
+
+# ---- Divers ----
+*.log
+*.bak
+*.orig
